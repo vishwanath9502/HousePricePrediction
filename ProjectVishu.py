@@ -14,10 +14,17 @@ st.image(image_path, caption='Innomatics-logo', use_column_width=True)
 
 st.title("House Price Prediction")
 
-# Load the pre-trained model
-model_path = 'lr.pkl'
-model = joblib.load(model_path)
+# Initialize model_loaded variable
+model_loaded = False
 
+try:
+    # Load the pre-trained model
+    model_path = 'lr.pkl'
+    model = joblib.load(model_path)
+    model_loaded = True
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+    
 # Sidebar content
 st.sidebar.header("Model Information")
 st.sidebar.markdown(
