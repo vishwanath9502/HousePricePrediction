@@ -14,12 +14,8 @@ st.image(image_path, caption='Innomatics-logo', use_column_width=True)
 st.title("House Price Prediction")
 
 # Load the pre-trained model
-try:
-    model = pickle.load(open(r"C:\Users\gorla\lr.pkl", "rb"))
-    model_loaded = True
-except Exception as e:
-    st.error(f"Error loading model: {e}")
-    model_loaded = False
+model_path = 'lr.pkl'
+model = joblib.load(model_path)
 
 # Sidebar content
 st.sidebar.header("Model Information")
