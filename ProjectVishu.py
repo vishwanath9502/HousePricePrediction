@@ -8,6 +8,9 @@ import pickle
 # Display title
 image_path = 'Innomatics-logo.png'  # Replace with your actual PNG image file path
 
+# Display the PNG image
+st.image(image_path, caption='Innomatics-logo', use_column_width=True)
+
 st.title("House Price Prediction")
 
 # Load the pre-trained model
